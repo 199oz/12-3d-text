@@ -20,7 +20,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('textures/matcaps/8.png')
+const matcapTexture = textureLoader.load('textures/matcaps/2.png')
 matcapTexture.colorSpace = THREE.SRGBColorSpace
 
 
@@ -32,7 +32,7 @@ fontLoader.load(
     (font) =>
     {
         const textGeometry = new TextGeometry(
-            ': DDD',
+            'Hello World',
             {
                 font: font,
                 size: 0.5,
@@ -55,7 +55,7 @@ scene.add(text)
     }
 )
 
-for (let i = 0; i < 500; i++)
+for (let i = 0; i < 600; i++)
 {
     const Geometry = new THREE.TorusGeometry(0.08, 0.06, 40, 80);
     Geometry.center()
@@ -123,9 +123,9 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 1
-camera.position.y = 1
-camera.position.z = 3
+camera.position.x = 0
+camera.position.y = 6
+camera.position.z = -10
 scene.add(camera)
 
 // Controls
@@ -145,11 +145,15 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  * Animate
  */
 const clock = new THREE.Clock()
-
+let radius = 10
+let speed = 2
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
 
+    camera.position.x = Math.sin(elapsedTime * speed) * radius 
+    camera.position.z = Math.cos(elapsedTime * speed) * radius
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
     // Update controls
     controls.update()
 
