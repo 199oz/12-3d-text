@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "deploy": "vercel build --prod"
-
+    "build": "vite build"
   },
   "devDependencies": {
     "vite": "^5.3.3",
