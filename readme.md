@@ -1,5 +1,8 @@
 # Three.js Journey
 
+##Live Preview 
+https://three-journey-3d-cyc9tzyup-199ozs-projects.vercel.app
+
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
@@ -14,3 +17,4 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
+
