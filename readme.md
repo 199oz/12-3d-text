@@ -1,6 +1,6 @@
 # Three.js Journey
 
-##Live Preview 
+## Live Preview:
 https://three-journey-3d-cyc9tzyup-199ozs-projects.vercel.app
 
 ## Setup
